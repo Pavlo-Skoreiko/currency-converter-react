@@ -9,7 +9,7 @@ I created this page as part of my developer course.
 
 ## Demo:
 
-https://pavlo-skoreiko.github.io/currency-converter/
+https://pavlo-skoreiko.github.io/currency-converter-react/
 
 ![GIF website presentation](https://media.giphy.com/media/ZVOcmK8WvbL7INgdBJ/giphy.gif)
 
