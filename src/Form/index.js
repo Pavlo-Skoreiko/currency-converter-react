@@ -1,10 +1,12 @@
 import "./style.css";
 
-const Form = () => (
+const Form = ({ title }) => (
+
+
   <form>
     <fieldset className="form">
     <legend className="form__legend">
-      <h1>Kalkulator walutowy</h1>
+      <h1>{title}</h1>
     </legend>
     <p>
       <span className="form__labelText">Mam: Kwota w zł</span>
@@ -19,7 +21,7 @@ const Form = () => (
     </p>
     <p>
       <label>
-        <span className="form__labelText">Wybierz walutę</span>
+        <span className="form__labelText">Wybierz walutę:</span>
       </label>
       <select className="form__field">
         <option value="EUR">EUR Euro</option>
