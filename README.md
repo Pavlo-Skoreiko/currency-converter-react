@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# Currency-converter
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description:
+
+I created this page as part of my developer course.
+- This is currency cantor where You can check how many money You can get in exchange from PLN to EUR, USD and GBP.
+
+## Demo:
+
+https://pavlo-skoreiko.github.io/currency-converter/
+
+![GIF website presentation](https://media.giphy.com/media/ZVOcmK8WvbL7INgdBJ/giphy.gif)
 
 ## Available Scripts
 
@@ -13,11 +24,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
