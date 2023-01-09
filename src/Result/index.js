@@ -1,7 +1,7 @@
-import "./style.css"
+import "./style.css";
 
-const Result = () => (
-    <p className="result"></p>
-);
+const Result = ({ result }) => {
+  return <p className="result">{result}</p>;
+};
 
 export default Result;

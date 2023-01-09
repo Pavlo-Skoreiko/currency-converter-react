@@ -1,15 +1,6 @@
-import { useState } from "react";
 import Currencies from "../Currencies";
 
-const Select = () => {
-  const [selectCurrency, setSelectCurrency] = useState();
-
-  const handleCurrencyChange = (event) => {
-    setSelectCurrency(
-      Currencies.find((o) => o.id === parseInt(event.target.value))
-    );
-  };
-
+const Select = ({ selectCurrency, handleCurrencyChange }) => {
   return (
     <>
       <span className="form__labelText">Wybierz walutę:</span>

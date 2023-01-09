@@ -1,38 +1,37 @@
+import Select from "../Select";
 import "./style.css";
 
-const Form = ({ title }) => (
+const Form = ({setAmount, selectCurrency, onChange, amount, handleCurrencyChange,}) => {
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
-
-  <form>
-    <fieldset className="form">
-    <legend className="form__legend">
-      <h1>{title}</h1>
-    </legend>
-    <p>
-      <span className="form__labelText">Mam: Kwota w zł</span>
-      <input
-        className="form__field"
-        required
-        type="number"
-        min="0"
-        step="0.01"
-        placeholder="Posiadam..."
-      />
-    </p>
-    <p>
-      <label>
-        <span className="form__labelText">Wybierz walutę:</span>
-      </label>
-      <select className="form__field">
-        <option value="EUR">EUR Euro</option>
-        <option value="USD">USD Dolar amerykański</option>
-        <option value="GBP">GBP Funt brytyjski</option>
-      </select>
-    </p>
-    </fieldset>
-  </form>
-);
+  return (
+    <form onSubmit={onFormSubmit} onChange={setAmount}>
+      <fieldset className="form">
+        <legend className="form__legend">
+          <h1>Kalkulator walutowy</h1>
+        </legend>
+        <p>
+          <span className="form__labelText">Mam: Kwota w zł</span>
+          <input
+            onChange={onChange}
+            value={amount}
+            className="form__field"
+            required
+            type="number"
+            min="0"
+            step="0.01"
+            placeholder="Posiadam..."
+          />
+        </p>
+        <Select
+          handleCurrencyChange={handleCurrencyChange}
+          selectCurrency={selectCurrency}
+        />
+      </fieldset>
+    </form>
+  );
+};
 
 export default Form;
-
-
