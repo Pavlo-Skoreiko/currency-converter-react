@@ -1,4 +1,4 @@
-import Currencies from "../Currencies";
+import currencies from "../currencies";
 
 const Select = ({ selectCurrency, handleCurrencyChange }) => {
   return (
@@ -9,7 +9,7 @@ const Select = ({ selectCurrency, handleCurrencyChange }) => {
         value={selectCurrency ? selectCurrency.id : ""}
         onChange={handleCurrencyChange}
       >
-        {Currencies.map((currency) => (
+        {currencies.map((currency) => (
           <option key={currency.id} value={currency.id}>
             {currency.currency} {currency.name}
           </option>
