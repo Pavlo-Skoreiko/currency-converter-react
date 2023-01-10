@@ -1,8 +1,8 @@
 import "./style.css";
 
 const Container = ({ children }) => 
-  <div className="container">
+  <main className="container">
      {children}
-  </div>;
+  </main>;
 
 export default Container;

@@ -3,23 +3,18 @@ import Result from "./Result";
 import СlearButton from "./СlearButton";
 import ResultButton from "./ResultButton";
 import Container from "./Container";
-import Currencies from "./Currencies";
+import currencies from "./currencies";
 import { useState } from "react";
 
 function App() {
   const [amount, setAmount] = useState("");
   const [result, setResult] = useState(null);
- 
-  const [selectCurrency, setSelectCurrency] = useState({
-    id: 1,
-    name: "Dolar amerykański",
-    currency: "USD",
-    rate: 4.39,
-  });
+
+  const [selectCurrency, setSelectCurrency] = useState(currencies[0])
 
   const handleCurrencyChange = (event) => {
     setSelectCurrency(
-      Currencies.find((o) => o.id === parseInt(event.target.value))
+      currencies.find((object) => object.id === parseInt(event.target.value))
     );
   };
 
@@ -28,9 +23,7 @@ function App() {
 
   const handleCalculate = () => {
     const calculateResult = amount / rate;
-    const result = `${amount} PLN = ${calculateResult.toFixed(
-      2
-    )} ${abbreviation}`;
+    const result = `${amount} PLN = ${calculateResult.toFixed(2)} ${abbreviation}`;
     setResult(result);
   };
 

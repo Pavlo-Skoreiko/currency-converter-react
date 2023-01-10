@@ -5,19 +5,19 @@
   margin: 20px 0;
 }
 
+.form__legend {
+  background-color: hsl(209, 67%, 27%);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 .form__labelText {
   width: 100%;
   max-width: 150px;
   display: inline-block;
   margin-right: 5px;
   font-size: large;
-}
-
-.form__legend {
-  background-color: hsl(209, 67%, 27%);
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
 }
 
 .form__field {
