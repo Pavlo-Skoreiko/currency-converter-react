@@ -4,6 +4,7 @@ import СlearButton from "./СlearButton";
 import ResultButton from "./ResultButton";
 import Container from "./Container";
 import currencies from "./currencies";
+import Timer from "./Timer"
 import { useState } from "react";
 
 function App() {
@@ -26,9 +27,10 @@ function App() {
     const result = `${amount} PLN = ${calculateResult.toFixed(2)} ${abbreviation}`;
     setResult(result);
   };
-
+ 
   return (
     <Container className="container">
+      <Timer />
       <Form
         handleCurrencyChange={handleCurrencyChange}
         selectCurrency={selectCurrency}
