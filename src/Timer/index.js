@@ -11,16 +11,18 @@ const Timer = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const formatDate = date.toLocaleDateString("pl",{ 
+    year: "numeric", 
+    month: "long", 
+    weekday: "long",
+    day: "numeric", 
+    hour: "numeric", 
+    minute: "numeric", 
+    second: "numeric"
+ });
+
   return (
-    <p className="timer"> Dzisiaj jest {date.toLocaleDateString("pl",{ 
-      year: "numeric", 
-      month: "long", 
-      weekday: "long",
-      day: "numeric", 
-      hour: "numeric", 
-      minute: "numeric", 
-      second: "numeric"
-   })}</p>
+    <p className="timer"> Dzisiaj jest {formatDate}</p>
   );
 };
 
