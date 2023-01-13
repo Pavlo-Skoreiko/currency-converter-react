@@ -1,29 +1,31 @@
-.form {
+import styled from "styled-components";
+
+export const Field = styled.fieldset`
   border: 1px solid #ccc;
   padding: 20px 0;
   border-radius: 5px;
   margin: 20px 0;
-}
+`;
 
-.form__legend {
+export const Title = styled.legend`
   background-color: hsl(209, 67%, 27%);
   color: white;
   border-radius: 5px;
   padding: 10px;
-}
+`;
 
-.form__labelText {
+export const LabelForm = styled.span`
   width: 100%;
   max-width: 150px;
   display: inline-block;
   margin-right: 5px;
   font-size: large;
-}
+`;
 
-.form__field {
+export const Input = styled.input`
   border: 1px solid #ccc;
   padding: 10px;
   max-width: 400px;
   width: 100%;
   border-radius: 5px;
-}
+`;

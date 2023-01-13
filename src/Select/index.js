@@ -1,11 +1,11 @@
 import currencies from "../currencies";
+import {LabelSelect, InputSelect} from "./styled"
 
 const Select = ({ selectCurrency, handleCurrencyChange }) => {
   return (
     <>
-      <span className="form__labelText">Wybierz walutę:</span>
-      <select
-        className="form__field"
+      <LabelSelect> Wybierz walutę: </LabelSelect>
+      <InputSelect
         value={selectCurrency ? selectCurrency.id : ""}
         onChange={handleCurrencyChange}
       >
@@ -14,7 +14,7 @@ const Select = ({ selectCurrency, handleCurrencyChange }) => {
             {currency.currency} {currency.name}
           </option>
         ))}
-      </select>
+      </InputSelect>
     </>
   );
 };

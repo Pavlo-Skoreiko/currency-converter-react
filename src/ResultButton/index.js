@@ -1,10 +1,10 @@
-import "./style.css";
+import { Button } from "./styled";
 
 const ResultButton = ({ calculate }) => {
   return (
-    <button onClick={calculate} className="button">
+    <Button onClick={calculate} >
       Przelicz !
-    </button>
+    </Button>
   );
 };
 

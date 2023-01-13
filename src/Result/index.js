@@ -1,7 +1,7 @@
-import "./style.css";
+import { Resulting } from "./styled";
 
 const Result = ({ result }) => {
-  return <p className="result">{result}</p>;
+  return <Resulting>{result}</Resulting>;
 };
 
 export default Result;

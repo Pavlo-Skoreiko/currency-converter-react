@@ -1,5 +1,5 @@
 import Select from "../Select";
-import "./style.css";
+import { Field, Title, LabelForm, Input } from "./styled";
 
 const Form = ({setAmount, selectCurrency, onChange, amount, handleCurrencyChange,}) => {
   const onFormSubmit = (event) => {
@@ -8,16 +8,15 @@ const Form = ({setAmount, selectCurrency, onChange, amount, handleCurrencyChange
 
   return (
     <form onSubmit={onFormSubmit} onChange={setAmount}>
-      <fieldset className="form">
-        <legend className="form__legend">
+      <Field>
+        <Title>
           <h1>Kalkulator walutowy</h1>
-        </legend>
+        </Title>
         <p>
-          <span className="form__labelText">Mam: Kwota w zł</span>
-          <input
+          <LabelForm>Mam: Kwota w zł </LabelForm>
+          <Input
             onChange={onChange}
             value={amount}
-            className="form__field"
             required
             type="number"
             min="0"
@@ -29,7 +28,7 @@ const Form = ({setAmount, selectCurrency, onChange, amount, handleCurrencyChange
           handleCurrencyChange={handleCurrencyChange}
           selectCurrency={selectCurrency}
         />
-      </fieldset>
+      </Field>
     </form>
   );
 };

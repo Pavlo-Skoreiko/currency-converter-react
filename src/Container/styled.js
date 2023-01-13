@@ -1,4 +1,6 @@
-.container {
+import styled from "styled-components";
+
+export const Cistern = styled.main`
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
@@ -6,4 +8,4 @@
   text-align: center;
   background-color: hsla(0, 0%, 100%, 0.692);
   border-radius: 15px;
-}
+`;

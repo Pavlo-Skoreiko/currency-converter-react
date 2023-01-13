@@ -1,4 +1,4 @@
-import "./style.css";
+import {Reset} from "./styled"
 
 const СlearButton = ({ setAmount }) => {
   const handleClear = () => {
@@ -6,9 +6,9 @@ const СlearButton = ({ setAmount }) => {
   };
 
   return (
-    <button onClick={handleClear} className="button__clear">
+    <Reset onClick={handleClear} >
       Wyczyść
-    </button>
+    </Reset>
   );
 };
 

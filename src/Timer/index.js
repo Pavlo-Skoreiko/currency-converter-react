@@ -1,5 +1,5 @@
-import "./style.css";
 import {useCurrentDate} from "./useCurrentDate";
+import { Chronometer } from "./styled";
 
 const formatDate = (date) =>  date.toLocaleDateString("pl", {
   year: "numeric",
@@ -15,11 +15,11 @@ const Timer = () => {
   const date = useCurrentDate();
 
   return ( 
-    <p className="timer">
+    <Chronometer>
         Dzisiaj jest
         {" "}
         {formatDate(date)}
-    </p>
+    </Chronometer>
   );
 };
 
