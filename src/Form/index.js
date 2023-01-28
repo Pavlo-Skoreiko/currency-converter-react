@@ -5,7 +5,7 @@ import {
   Input,
   LabelSelect,
   InputSelect,
-  Loding,
+  Loading,
   Failing,
 } from "./styled";
 const Form = ({ ratesData, amount, setAmount, currency, setCurrency }) => {
@@ -19,11 +19,11 @@ const Form = ({ ratesData, amount, setAmount, currency, setCurrency }) => {
         <Title>
           <h1>Kalkulator walutowy</h1>
         </Title>
-        {ratesData.state === "loding" ? (
-          <Loding>
+        {ratesData.state === "loading" ? (
+          <Loading>
             Proszę czekać <br />
             Ładuję kursy walut z Europejskiego Banku Centralnego.
-          </Loding>
+          </Loading>
         ) : ratesData.state === "error" ? (
           <Failing>
             Coś poszło nie tak... Sprawdź, czy masz połączenie z internetem.

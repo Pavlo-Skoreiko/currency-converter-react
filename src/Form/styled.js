@@ -46,7 +46,7 @@ export const InputSelect = styled.select`
   border-radius: 5px;
 `;
 
-export const Loding = styled.p`
+export const Loading = styled.p`
 color: darkblue;
 font-size: large;
 `;
