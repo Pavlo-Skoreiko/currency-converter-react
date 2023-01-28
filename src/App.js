@@ -33,10 +33,10 @@ function App() {
         setCurrency={setCurrency}
         currency={currency}
       />
-      {ratesData.state === "loding" ? ("") : (
+      {ratesData.state === "loading" ? ("") : ( ratesData.state === "error" ? ("") :
         <ResultButton calculate={handleCalculate} ratesData={ratesData} />
       )}
-      {ratesData.state === "loding" ? ("") : (
+      {ratesData.state === "loading" ? ("") : ( ratesData.state === "error" ? ("") :
         <СlearButton setAmount={setAmount} ratesData={ratesData} />
       )}
       <p>
