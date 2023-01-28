@@ -1,33 +1,61 @@
-import Select from "../Select";
-import { Field, Title, LabelForm, Input } from "./styled";
-
-const Form = ({setAmount, selectCurrency, onChange, amount, handleCurrencyChange,}) => {
+import {
+  Field,
+  Title,
+  LabelForm,
+  Input,
+  LabelSelect,
+  InputSelect,
+  Loding,
+  Failing,
+} from "./styled";
+const Form = ({ ratesData, amount, setAmount, currency, setCurrency }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
   };
 
   return (
-    <form onSubmit={onFormSubmit} onChange={setAmount}>
+    <form onSubmit={onFormSubmit}>
       <Field>
         <Title>
           <h1>Kalkulator walutowy</h1>
         </Title>
-        <p>
-          <LabelForm>Mam: Kwota w zł </LabelForm>
-          <Input
-            onChange={onChange}
-            value={amount}
-            required
-            type="number"
-            min="0"
-            step="0.01"
-            placeholder="Posiadam..."
-          />
-        </p>
-        <Select
-          handleCurrencyChange={handleCurrencyChange}
-          selectCurrency={selectCurrency}
-        />
+        {ratesData.state === "loding" ? (
+          <Loding>
+            Proszę czekać <br />
+            Ładuję kursy walut z Europejskiego Banku Centralnego.
+          </Loding>
+        ) : ratesData.state === "error" ? (
+          <Failing>
+            Coś poszło nie tak... Sprawdź, czy masz połączenie z internetem.
+          </Failing>
+        ) : (
+          <>
+            <p>
+              <LabelForm>Mam: Kwota w zł </LabelForm>
+              <Input
+                onChange={({ target }) => setAmount(target.value)}
+                value={amount}
+                required
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Posiadam..."
+              />
+            </p>
+            <LabelSelect> Wybierz walutę: </LabelSelect>
+            <InputSelect
+              value={currency}
+              onChange={({ target }) => setCurrency(target.value)}
+            >
+              {!!ratesData.rates &&
+                Object.keys(ratesData.rates).map((currency) => (
+                  <option key={currency} value={currency}>
+                    {currency}
+                  </option>
+                ))}
+            </InputSelect>
+          </>
+        )}
       </Field>
     </form>
   );
