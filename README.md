@@ -5,7 +5,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Description:
 
 I created this page as part of my developer course.
-- This is currency cantor where You can check how many money You can get in exchange from PLN to EUR, USD and GBP.
+- This is a currency office where you can check how much money you can exchange for other currencies of your choice.
+Current exchange rates are obtained from the API.
+Currency data delivered are sourced from financial data providers and banks, including the European Central Bank.
 
 ## Demo:
 
