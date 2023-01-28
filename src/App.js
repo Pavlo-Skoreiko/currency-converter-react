@@ -3,48 +3,53 @@ import Result from "./Result";
 import СlearButton from "./СlearButton";
 import ResultButton from "./ResultButton";
 import Container from "./Container";
-import currencies from "./currencies";
-import Timer from "./Timer"
+import Timer from "./Timer";
 import { useState } from "react";
+import { useCurrencyRates } from "./useCurrencyRate";
 
 function App() {
   const [amount, setAmount] = useState("");
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState();
+  const [currency, setCurrency] = useState("EUR");
 
-  const [selectCurrency, setSelectCurrency] = useState(currencies[0])
-
-  const handleCurrencyChange = (event) => {
-    setSelectCurrency(
-      currencies.find((object) => object.id === parseInt(event.target.value))
-    );
-  };
-
-  const rate = selectCurrency.rate;
-  const abbreviation = selectCurrency.currency;
+  const ratesData = useCurrencyRates();
 
   const handleCalculate = () => {
-    const calculateResult = amount / rate;
+    const rate = ratesData.rates[currency];
+
+    const abbreviation = currency;
+    const calculateResult = amount * rate;
     const result = `${amount} PLN = ${calculateResult.toFixed(2)} ${abbreviation}`;
     setResult(result);
   };
- 
+
   return (
-    <Container className="container">
+    <Container>
       <Timer />
       <Form
-        handleCurrencyChange={handleCurrencyChange}
-        selectCurrency={selectCurrency}
         amount={amount}
-        onChange={({ target }) => setAmount(target.value)}
+        ratesData={ratesData}
+        setAmount={setAmount}
+        setCurrency={setCurrency}
+        currency={currency}
       />
-      <ResultButton calculate={handleCalculate} />
-      <СlearButton setAmount={setAmount} />
-      <p>Podane w tabeli kursy walut są przykładowe</p>
+      {ratesData.state === "loding" ? ("") : (
+        <ResultButton calculate={handleCalculate} ratesData={ratesData} />
+      )}
+      {ratesData.state === "loding" ? ("") : (
+        <СlearButton setAmount={setAmount} ratesData={ratesData} />
+      )}
+      <p>
+        Kursy walut pobierane są z Europejskiego Banku Centralnego. Aktualne na
+        dzień: {ratesData.date}{" "}
+      </p>
       {result && (
         <Result
           amount={amount}
           result={result}
-          selectCurrency={selectCurrency}
+          setResult={setResult}
+          ratesData={ratesData}
+          currency={currency}
         />
       )}
     </Container>
